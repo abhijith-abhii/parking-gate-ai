@@ -1,0 +1,22 @@
+[
+  {
+    "scenario": "conflict",
+    "status": "CLOSED",
+    "passed": true
+  },
+  {
+    "scenario": "obstruction",
+    "status": "HOLD",
+    "passed": true
+  },
+  {
+    "check": "actual neural-network inference",
+    "sample": "109441",
+    "passed": true
+  },
+  {
+    "check": "two recorded synthetic video frames then end-of-file disconnect",
+    "passed": true,
+    "scope": "I/O and inference path only; not recognition or tracking accuracy"
+  }
+]

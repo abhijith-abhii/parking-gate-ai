@@ -1,0 +1,4 @@
+metric,baseline,final,unit,scope,absolute_change,relative_change_percent
+Vehicle detection F1,0.38596491228070173,0.5809523809523809,score,78 COCO test images; IoU >= 0.5; threshold 0.25; 320 to 640 pixels,0.19498746867167915,50.51948051948051
+False free availability,15,0,slot-seconds,480 synthetic slot-seconds; final decision coverage 83.33%,-15,-100.0
+Unsafe closure requests,14,0,cases,30 scripted closure cases; not a physical safety rating,-14,-100.0

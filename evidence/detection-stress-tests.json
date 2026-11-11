@@ -1,0 +1,352 @@
+[
+  {
+    "image_id": 1296,
+    "transform": "original",
+    "person_candidates": 4,
+    "brightness": 101.97660763075721,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 1296,
+    "transform": "low_light",
+    "person_candidates": 2,
+    "brightness": 17.875618413348946,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 1296,
+    "transform": "shadow",
+    "person_candidates": 2,
+    "brightness": 64.11513831967213,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 1296,
+    "transform": "partial_occlusion",
+    "person_candidates": 5,
+    "brightness": 94.8406994047619,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 1296,
+    "transform": "depiction_composite",
+    "person_candidates": 5,
+    "brightness": 171.11419545277127,
+    "physical_person_ground_truth": 0
+  },
+  {
+    "image_id": 209829,
+    "transform": "original",
+    "person_candidates": 3,
+    "brightness": 125.76703450520833,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 209829,
+    "transform": "low_light",
+    "person_candidates": 3,
+    "brightness": 22.13845920138889,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 209829,
+    "transform": "shadow",
+    "person_candidates": 3,
+    "brightness": 78.00206380208333,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 209829,
+    "transform": "partial_occlusion",
+    "person_candidates": 3,
+    "brightness": 112.82068576388889,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 209829,
+    "transform": "depiction_composite",
+    "person_candidates": 3,
+    "brightness": 179.64910047743055,
+    "physical_person_ground_truth": 0
+  },
+  {
+    "image_id": 54931,
+    "transform": "original",
+    "person_candidates": 1,
+    "brightness": 81.61454796057767,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 54931,
+    "transform": "low_light",
+    "person_candidates": 1,
+    "brightness": 14.204961943793911,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 54931,
+    "transform": "shadow",
+    "person_candidates": 1,
+    "brightness": 43.027455357142856,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 54931,
+    "transform": "partial_occlusion",
+    "person_candidates": 1,
+    "brightness": 76.51015320062452,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 54931,
+    "transform": "depiction_composite",
+    "person_candidates": 1,
+    "brightness": 163.79671643247462,
+    "physical_person_ground_truth": 0
+  },
+  {
+    "image_id": 290843,
+    "transform": "original",
+    "person_candidates": 1,
+    "brightness": 107.65485421534268,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 290843,
+    "transform": "low_light",
+    "person_candidates": 1,
+    "brightness": 18.884985883956386,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 290843,
+    "transform": "shadow",
+    "person_candidates": 1,
+    "brightness": 55.46788235007788,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 290843,
+    "transform": "partial_occlusion",
+    "person_candidates": 1,
+    "brightness": 91.08524995132399,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 290843,
+    "transform": "depiction_composite",
+    "person_candidates": 1,
+    "brightness": 173.09776577102804,
+    "physical_person_ground_truth": 0
+  },
+  {
+    "image_id": 261888,
+    "transform": "original",
+    "person_candidates": 1,
+    "brightness": 103.62144708528952,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 261888,
+    "transform": "low_light",
+    "person_candidates": 3,
+    "brightness": 18.157306338028167,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 261888,
+    "transform": "shadow",
+    "person_candidates": 3,
+    "brightness": 70.72648180751173,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 261888,
+    "transform": "partial_occlusion",
+    "person_candidates": 1,
+    "brightness": 89.76268828247261,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 261888,
+    "transform": "depiction_composite",
+    "person_candidates": 3,
+    "brightness": 171.779716842723,
+    "physical_person_ground_truth": 0
+  },
+  {
+    "image_id": 483667,
+    "transform": "original",
+    "person_candidates": 1,
+    "brightness": 61.15243177816902,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 483667,
+    "transform": "low_light",
+    "person_candidates": 1,
+    "brightness": 10.505445520344288,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 483667,
+    "transform": "shadow",
+    "person_candidates": 1,
+    "brightness": 33.34842405125195,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 483667,
+    "transform": "partial_occlusion",
+    "person_candidates": 1,
+    "brightness": 64.82548170970266,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 483667,
+    "transform": "depiction_composite",
+    "person_candidates": 1,
+    "brightness": 156.51016236306728,
+    "physical_person_ground_truth": 0
+  },
+  {
+    "image_id": 75612,
+    "transform": "original",
+    "person_candidates": 12,
+    "brightness": 117.957099609375,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 75612,
+    "transform": "low_light",
+    "person_candidates": 12,
+    "brightness": 20.737628038194444,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 75612,
+    "transform": "shadow",
+    "person_candidates": 12,
+    "brightness": 73.98926649305555,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 75612,
+    "transform": "partial_occlusion",
+    "person_candidates": 11,
+    "brightness": 106.63873480902778,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 75612,
+    "transform": "depiction_composite",
+    "person_candidates": 10,
+    "brightness": 176.83554361979168,
+    "physical_person_ground_truth": 0
+  },
+  {
+    "image_id": 168974,
+    "transform": "original",
+    "person_candidates": 1,
+    "brightness": 74.83265422222222,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 168974,
+    "transform": "low_light",
+    "person_candidates": 1,
+    "brightness": 12.980963555555556,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 168974,
+    "transform": "shadow",
+    "person_candidates": 2,
+    "brightness": 44.47230044444444,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 168974,
+    "transform": "partial_occlusion",
+    "person_candidates": 2,
+    "brightness": 64.970448,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 168974,
+    "transform": "depiction_composite",
+    "person_candidates": 1,
+    "brightness": 161.30262222222223,
+    "physical_person_ground_truth": 0
+  },
+  {
+    "image_id": 447187,
+    "transform": "original",
+    "person_candidates": 3,
+    "brightness": 128.3708669704861,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 447187,
+    "transform": "low_light",
+    "person_candidates": 3,
+    "brightness": 22.61422309027778,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 447187,
+    "transform": "shadow",
+    "person_candidates": 4,
+    "brightness": 79.38342122395834,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 447187,
+    "transform": "partial_occlusion",
+    "person_candidates": 3,
+    "brightness": 115.83351996527777,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 447187,
+    "transform": "depiction_composite",
+    "person_candidates": 4,
+    "brightness": 180.58664171006944,
+    "physical_person_ground_truth": 0
+  },
+  {
+    "image_id": 74200,
+    "transform": "original",
+    "person_candidates": 1,
+    "brightness": 79.38698133680556,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 74200,
+    "transform": "low_light",
+    "person_candidates": 0,
+    "brightness": 13.788681640625,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 74200,
+    "transform": "shadow",
+    "person_candidates": 0,
+    "brightness": 57.79086371527778,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 74200,
+    "transform": "partial_occlusion",
+    "person_candidates": 1,
+    "brightness": 78.08214301215278,
+    "physical_person_ground_truth": null
+  },
+  {
+    "image_id": 74200,
+    "transform": "depiction_composite",
+    "person_candidates": 0,
+    "brightness": 162.96709852430556,
+    "physical_person_ground_truth": 0
+  }
+]

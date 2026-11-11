@@ -1,0 +1,637 @@
+{
+  "environment": "macOS-26.2-arm64-arm-64bit",
+  "protocol": {
+    "matching": "class-aware greedy IoU >= .5; counts include all retained boxes",
+    "split": "42 validation and 78 test images, metadata-stratified; image-disjoint",
+    "baseline": {
+      "size": 320,
+      "threshold": 0.25
+    },
+    "selection": {
+      "classroom": {
+        "threshold": 0.25,
+        "size": 640,
+        "labels": [
+          "person"
+        ]
+      },
+      "parking": {
+        "threshold": 0.25,
+        "size": 640,
+        "labels": [
+          "car",
+          "motorcycle",
+          "bus",
+          "truck"
+        ]
+      }
+    },
+    "limitations": [
+      "COCO visual labels do not establish physical human presence.",
+      "COCO val2017 is known to model developers and not an independent unseen deployment dataset.",
+      "Crowd GT ignored, but predictions inside crowds still count as false positives; this is not official COCO AP.",
+      "Image-level split; recording or scene IDs are unavailable."
+    ]
+  },
+  "tuning": {
+    "classroom": [
+      {
+        "threshold": 0.15,
+        "result": {
+          "tp": 85,
+          "fp": 21,
+          "fn": 19,
+          "precision": 0.8018867924528302,
+          "recall": 0.8173076923076923,
+          "f1": 0.8095238095238094,
+          "count_mae": 0.5238095238095238,
+          "images": 42,
+          "ignored_crowd_annotations": 0,
+          "per_class": {
+            "person": {
+              "tp": 85,
+              "fp": 21,
+              "fn": 19,
+              "precision": 0.8018867924528302,
+              "recall": 0.8173076923076923,
+              "f1": 0.8095238095238094
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.25,
+        "result": {
+          "tp": 77,
+          "fp": 7,
+          "fn": 27,
+          "precision": 0.9166666666666666,
+          "recall": 0.7403846153846154,
+          "f1": 0.8191489361702129,
+          "count_mae": 0.5714285714285714,
+          "images": 42,
+          "ignored_crowd_annotations": 0,
+          "per_class": {
+            "person": {
+              "tp": 77,
+              "fp": 7,
+              "fn": 27,
+              "precision": 0.9166666666666666,
+              "recall": 0.7403846153846154,
+              "f1": 0.8191489361702129
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.4,
+        "result": {
+          "tp": 70,
+          "fp": 3,
+          "fn": 34,
+          "precision": 0.958904109589041,
+          "recall": 0.6730769230769231,
+          "f1": 0.7909604519774011,
+          "count_mae": 0.7857142857142857,
+          "images": 42,
+          "ignored_crowd_annotations": 0,
+          "per_class": {
+            "person": {
+              "tp": 70,
+              "fp": 3,
+              "fn": 34,
+              "precision": 0.958904109589041,
+              "recall": 0.6730769230769231,
+              "f1": 0.7909604519774011
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.55,
+        "result": {
+          "tp": 58,
+          "fp": 0,
+          "fn": 46,
+          "precision": 1.0,
+          "recall": 0.5576923076923077,
+          "f1": 0.7160493827160493,
+          "count_mae": 1.0952380952380953,
+          "images": 42,
+          "ignored_crowd_annotations": 0,
+          "per_class": {
+            "person": {
+              "tp": 58,
+              "fp": 0,
+              "fn": 46,
+              "precision": 1.0,
+              "recall": 0.5576923076923077,
+              "f1": 0.7160493827160493
+            }
+          }
+        }
+      }
+    ],
+    "parking": [
+      {
+        "threshold": 0.15,
+        "result": {
+          "tp": 50,
+          "fp": 30,
+          "fn": 24,
+          "precision": 0.625,
+          "recall": 0.6756756756756757,
+          "f1": 0.6493506493506493,
+          "count_mae": 0.8095238095238095,
+          "images": 42,
+          "ignored_crowd_annotations": 3,
+          "per_class": {
+            "car": {
+              "tp": 29,
+              "fp": 16,
+              "fn": 10,
+              "precision": 0.6444444444444445,
+              "recall": 0.7435897435897436,
+              "f1": 0.6904761904761906
+            },
+            "motorcycle": {
+              "tp": 1,
+              "fp": 2,
+              "fn": 1,
+              "precision": 0.3333333333333333,
+              "recall": 0.5,
+              "f1": 0.4
+            },
+            "bus": {
+              "tp": 18,
+              "fp": 3,
+              "fn": 10,
+              "precision": 0.8571428571428571,
+              "recall": 0.6428571428571429,
+              "f1": 0.7346938775510204
+            },
+            "truck": {
+              "tp": 2,
+              "fp": 9,
+              "fn": 3,
+              "precision": 0.18181818181818182,
+              "recall": 0.4,
+              "f1": 0.25000000000000006
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.25,
+        "result": {
+          "tp": 45,
+          "fp": 12,
+          "fn": 29,
+          "precision": 0.7894736842105263,
+          "recall": 0.6081081081081081,
+          "f1": 0.6870229007633588,
+          "count_mae": 0.6904761904761905,
+          "images": 42,
+          "ignored_crowd_annotations": 3,
+          "per_class": {
+            "car": {
+              "tp": 27,
+              "fp": 7,
+              "fn": 12,
+              "precision": 0.7941176470588235,
+              "recall": 0.6923076923076923,
+              "f1": 0.7397260273972601
+            },
+            "motorcycle": {
+              "tp": 1,
+              "fp": 1,
+              "fn": 1,
+              "precision": 0.5,
+              "recall": 0.5,
+              "f1": 0.5
+            },
+            "bus": {
+              "tp": 15,
+              "fp": 1,
+              "fn": 13,
+              "precision": 0.9375,
+              "recall": 0.5357142857142857,
+              "f1": 0.6818181818181818
+            },
+            "truck": {
+              "tp": 2,
+              "fp": 3,
+              "fn": 3,
+              "precision": 0.4,
+              "recall": 0.4,
+              "f1": 0.4000000000000001
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.4,
+        "result": {
+          "tp": 38,
+          "fp": 4,
+          "fn": 36,
+          "precision": 0.9047619047619048,
+          "recall": 0.5135135135135135,
+          "f1": 0.6551724137931034,
+          "count_mae": 0.8571428571428571,
+          "images": 42,
+          "ignored_crowd_annotations": 3,
+          "per_class": {
+            "car": {
+              "tp": 23,
+              "fp": 3,
+              "fn": 16,
+              "precision": 0.8846153846153846,
+              "recall": 0.5897435897435898,
+              "f1": 0.7076923076923076
+            },
+            "motorcycle": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0
+            },
+            "bus": {
+              "tp": 13,
+              "fp": 0,
+              "fn": 15,
+              "precision": 1.0,
+              "recall": 0.4642857142857143,
+              "f1": 0.6341463414634146
+            },
+            "truck": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 3,
+              "precision": 1.0,
+              "recall": 0.4,
+              "f1": 0.5714285714285715
+            }
+          }
+        }
+      },
+      {
+        "threshold": 0.55,
+        "result": {
+          "tp": 29,
+          "fp": 2,
+          "fn": 45,
+          "precision": 0.9354838709677419,
+          "recall": 0.3918918918918919,
+          "f1": 0.5523809523809524,
+          "count_mae": 1.0238095238095237,
+          "images": 42,
+          "ignored_crowd_annotations": 3,
+          "per_class": {
+            "car": {
+              "tp": 20,
+              "fp": 2,
+              "fn": 19,
+              "precision": 0.9090909090909091,
+              "recall": 0.5128205128205128,
+              "f1": 0.6557377049180326
+            },
+            "motorcycle": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 2,
+              "precision": 0,
+              "recall": 0.0,
+              "f1": 0
+            },
+            "bus": {
+              "tp": 7,
+              "fp": 0,
+              "fn": 21,
+              "precision": 1.0,
+              "recall": 0.25,
+              "f1": 0.4
+            },
+            "truck": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 3,
+              "precision": 1.0,
+              "recall": 0.4,
+              "f1": 0.5714285714285715
+            }
+          }
+        }
+      }
+    ]
+  },
+  "classroom": {
+    "baseline": {
+      "tp": 91,
+      "fp": 14,
+      "fn": 92,
+      "precision": 0.8666666666666667,
+      "recall": 0.4972677595628415,
+      "f1": 0.6319444444444445,
+      "count_mae": 1.1282051282051282,
+      "images": 78,
+      "ignored_crowd_annotations": 2,
+      "per_class": {
+        "person": {
+          "tp": 91,
+          "fp": 14,
+          "fn": 92,
+          "precision": 0.8666666666666667,
+          "recall": 0.4972677595628415,
+          "f1": 0.6319444444444445
+        }
+      }
+    },
+    "resolution_only": {
+      "tp": 121,
+      "fp": 25,
+      "fn": 62,
+      "precision": 0.8287671232876712,
+      "recall": 0.6612021857923497,
+      "f1": 0.735562310030395,
+      "count_mae": 0.6025641025641025,
+      "images": 78,
+      "ignored_crowd_annotations": 2,
+      "per_class": {
+        "person": {
+          "tp": 121,
+          "fp": 25,
+          "fn": 62,
+          "precision": 0.8287671232876712,
+          "recall": 0.6612021857923497,
+          "f1": 0.735562310030395
+        }
+      }
+    },
+    "final": {
+      "tp": 121,
+      "fp": 25,
+      "fn": 62,
+      "precision": 0.8287671232876712,
+      "recall": 0.6612021857923497,
+      "f1": 0.735562310030395,
+      "count_mae": 0.6025641025641025,
+      "images": 78,
+      "ignored_crowd_annotations": 2,
+      "per_class": {
+        "person": {
+          "tp": 121,
+          "fp": 25,
+          "fn": 62,
+          "precision": 0.8287671232876712,
+          "recall": 0.6612021857923497,
+          "f1": 0.735562310030395
+        }
+      }
+    },
+    "depiction_stress": {
+      "composites": 10,
+      "images_with_false_physical_person_candidate": 9,
+      "scope": "Entire input is a synthetic framed depiction. COCO source photos transformed; no real classroom posters evaluated. Known depiction zone can mark uncertainty; tracking alone does not solve this."
+    }
+  },
+  "parking": {
+    "baseline": {
+      "tp": 34,
+      "fp": 16,
+      "fn": 88,
+      "precision": 0.68,
+      "recall": 0.2786885245901639,
+      "f1": 0.3953488372093023,
+      "count_mae": 0.9487179487179487,
+      "images": 78,
+      "ignored_crowd_annotations": 1,
+      "per_class": {
+        "car": {
+          "tp": 22,
+          "fp": 5,
+          "fn": 54,
+          "precision": 0.8148148148148148,
+          "recall": 0.2894736842105263,
+          "f1": 0.4271844660194175
+        },
+        "motorcycle": {
+          "tp": 1,
+          "fp": 1,
+          "fn": 0,
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666
+        },
+        "bus": {
+          "tp": 4,
+          "fp": 9,
+          "fn": 6,
+          "precision": 0.3076923076923077,
+          "recall": 0.4,
+          "f1": 0.34782608695652173
+        },
+        "truck": {
+          "tp": 7,
+          "fp": 1,
+          "fn": 28,
+          "precision": 0.875,
+          "recall": 0.2,
+          "f1": 0.32558139534883723
+        }
+      }
+    },
+    "resolution_only": {
+      "tp": 63,
+      "fp": 27,
+      "fn": 59,
+      "precision": 0.7,
+      "recall": 0.5163934426229508,
+      "f1": 0.5943396226415094,
+      "count_mae": 0.48717948717948717,
+      "images": 78,
+      "ignored_crowd_annotations": 1,
+      "per_class": {
+        "car": {
+          "tp": 42,
+          "fp": 12,
+          "fn": 34,
+          "precision": 0.7777777777777778,
+          "recall": 0.5526315789473685,
+          "f1": 0.6461538461538462
+        },
+        "motorcycle": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "bus": {
+          "tp": 8,
+          "fp": 12,
+          "fn": 2,
+          "precision": 0.4,
+          "recall": 0.8,
+          "f1": 0.5333333333333333
+        },
+        "truck": {
+          "tp": 12,
+          "fp": 3,
+          "fn": 23,
+          "precision": 0.8,
+          "recall": 0.34285714285714286,
+          "f1": 0.48000000000000004
+        }
+      }
+    },
+    "final": {
+      "tp": 63,
+      "fp": 27,
+      "fn": 59,
+      "precision": 0.7,
+      "recall": 0.5163934426229508,
+      "f1": 0.5943396226415094,
+      "count_mae": 0.48717948717948717,
+      "images": 78,
+      "ignored_crowd_annotations": 1,
+      "per_class": {
+        "car": {
+          "tp": 42,
+          "fp": 12,
+          "fn": 34,
+          "precision": 0.7777777777777778,
+          "recall": 0.5526315789473685,
+          "f1": 0.6461538461538462
+        },
+        "motorcycle": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "bus": {
+          "tp": 8,
+          "fp": 12,
+          "fn": 2,
+          "precision": 0.4,
+          "recall": 0.8,
+          "f1": 0.5333333333333333
+        },
+        "truck": {
+          "tp": 12,
+          "fp": 3,
+          "fn": 23,
+          "precision": 0.8,
+          "recall": 0.34285714285714286,
+          "f1": 0.48000000000000004
+        }
+      }
+    }
+  },
+  "host_timing": {
+    "320": {
+      "count": 36,
+      "repeats": 3,
+      "median_ms": 12.56766659207642,
+      "p95_ms": 12.90878129657358,
+      "throughput_images_s": 70.64778375351254,
+      "wall_seconds": 0.5095701250247657,
+      "cpu_seconds": 1.0152220479999992,
+      "cpu_core_equivalents": 1.9923107696917242,
+      "rss_bytes": 230653952,
+      "samples_ms": [
+        13.230541720986366,
+        12.579250149428844,
+        12.411042116582394,
+        12.503333855420351,
+        12.517916038632393,
+        12.669499963521957,
+        12.775583192706108,
+        12.476457748562098,
+        12.543417047709227,
+        12.447166722267866,
+        12.004333082586527,
+        12.627709191292524,
+        12.560457922518253,
+        12.648082803934813,
+        12.756333220750093,
+        12.366042006760836,
+        12.431417126208544,
+        12.364249676465988,
+        12.84816674888134,
+        12.373125180602074,
+        12.480625417083502,
+        12.286041863262653,
+        12.779375072568655,
+        12.612542137503624,
+        12.64949981123209,
+        13.090624939650297,
+        12.473583221435547,
+        12.792333029210567,
+        12.574875261634588,
+        12.762458994984627,
+        12.677124701440334,
+        12.755958829075098,
+        12.463042046874762,
+        12.50891713425517,
+        12.604250106960535,
+        12.536083813756704
+      ]
+    },
+    "640": {
+      "count": 36,
+      "repeats": 3,
+      "median_ms": 45.84131296724081,
+      "p95_ms": 46.2594066048041,
+      "throughput_images_s": 21.092309173143754,
+      "wall_seconds": 1.7067832499742508,
+      "cpu_seconds": 3.393640527999997,
+      "cpu_core_equivalents": 1.9883254233079652,
+      "rss_bytes": 230670336,
+      "samples_ms": [
+        45.87062494829297,
+        45.83995882421732,
+        45.23341590538621,
+        45.69687461480498,
+        45.747915748506784,
+        45.4413746483624,
+        46.34974990040064,
+        45.81691604107618,
+        45.59708293527365,
+        45.6539997830987,
+        45.679334085434675,
+        45.62208289280534,
+        45.84412509575486,
+        45.87929230183363,
+        46.035791747272015,
+        45.78900011256337,
+        45.96316674724221,
+        46.15654097869992,
+        45.636416878551245,
+        45.8426671102643,
+        45.63812538981438,
+        45.552541967481375,
+        45.33016728237271,
+        46.466541942209005,
+        45.86241580545902,
+        45.906792394816875,
+        45.99970765411854,
+        45.734125189483166,
+        45.69237492978573,
+        46.07816692441702,
+        46.229292172938585,
+        45.885832980275154,
+        45.9934170357883,
+        45.621249824762344,
+        46.07225023210049,
+        46.03854101151228
+      ]
+    }
+  }
+}

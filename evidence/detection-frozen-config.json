@@ -1,0 +1,19 @@
+{
+  "classroom": {
+    "threshold": 0.25,
+    "size": 640,
+    "labels": [
+      "person"
+    ]
+  },
+  "parking": {
+    "threshold": 0.25,
+    "size": 640,
+    "labels": [
+      "car",
+      "motorcycle",
+      "bus",
+      "truck"
+    ]
+  }
+}
