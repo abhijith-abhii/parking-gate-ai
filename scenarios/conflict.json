@@ -1,0 +1,36 @@
+[
+  {
+    "op": "sensors",
+    "values": {
+      "camera_valid": true,
+      "sensor_valid": true,
+      "actuator_ok": true,
+      "jam": false,
+      "obstruction": false,
+      "person_obstruction": false,
+      "fill": 20,
+      "weight": 100
+    }
+  },
+  {
+    "op": "sensors",
+    "values": {
+      "camera_spaces": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "distance": [
+        30,
+        150,
+        150,
+        150
+      ]
+    }
+  },
+  {
+    "op": "step",
+    "seconds": 1
+  }
+]
