@@ -1,0 +1,135 @@
+{
+  "title": "Smart parking occupancy and gate",
+  "kind": "parking",
+  "intro": "A camera and four virtual proximity readings estimate parking-space availability. Only agreement produces a free or occupied decision; disagreement reserves the space. A separate gate state machine requires fresh clear obstruction evidence before closing, including during manual requests. This is a software simulation prototype, not a certified gate controller.",
+  "scope": "Raspberry Pi targeted, desktop simulation tested. No Pi, real sensor, electrical power, camera timing, motor or physical safety validation was performed. This is an AI-assisted personal engineering project; it does not establish professional seniority or independent authorship.",
+  "policies": [
+    "Space hysteresis uses distance below 70 cm as near and above 90 cm as far; valid distance range is 2 to 400 cm. Camera and sensor agreement produces the decision.",
+    "CLOSED transitions to OPENING only when a space is confirmed free; the virtual opening takes two seconds.",
+    "OPEN or HOLD requires two seconds of fresh clear evidence to enter CLOSING. Any obstruction or invalid evidence during closure moves to HOLD.",
+    "Actuator failure enters FAULT. Reset requires stable clear evidence and returns to OPEN for inspection. Restart during a gate cycle enters FAULT."
+  ],
+  "model": "YOLO11n detects car, motorcycle, bus and truck; person detections feed the obstruction flag. The weights remain pretrained. Float32 ONNX at 640 replaces a 320-pixel baseline, with threshold 0.25 selected on 42 validation images. Detection matches use class-aware greedy IoU >= 0.5 on 78 test images. This is not official COCO AP; ignored crowd regions can still generate false positives.",
+  "tradeoff": "Higher resolution increased vehicle F1 from 0.386 to 0.581 at roughly 3.6 times detector latency. Conservative fusion eliminated 15 false-free slot-seconds on the scripted trace, but only 83.33% of slot-seconds received a definite decision. Accuracy on decided slots was 100%; counting unknowns as errors gives 83.33%, below the baseline 93.75%. Reserving uncertainty costs availability.",
+  "limitations": "The four image regions are example vertical lanes, not calibrated real parking spaces. COCO object F1 is not parking occupancy accuracy. Only one motorcycle ground-truth instance occurs in the held-out test. Reflections, occlusion and shadows were explored with transformations, not a labeled parking deployment dataset. A stop/HOLD software state does not physically reopen a gate. Independent obstruction hardware, limit switches and electrical interlocks remain required.",
+  "metrics": [
+    {
+      "metric": "Vehicle detection F1",
+      "baseline": 0.38596491228070173,
+      "final": 0.5809523809523809,
+      "unit": "score",
+      "scope": "78 COCO test images; IoU >= 0.5; threshold 0.25; 320 to 640 pixels",
+      "absolute_change": 0.19498746867167915,
+      "relative_change_percent": 50.51948051948051
+    },
+    {
+      "metric": "False free availability",
+      "baseline": 15,
+      "final": 0,
+      "unit": "slot-seconds",
+      "scope": "480 synthetic slot-seconds; final decision coverage 83.33%",
+      "absolute_change": -15,
+      "relative_change_percent": -100.0
+    },
+    {
+      "metric": "Unsafe closure requests",
+      "baseline": 14,
+      "final": 0,
+      "unit": "cases",
+      "scope": "30 scripted closure cases; not a physical safety rating",
+      "absolute_change": -14,
+      "relative_change_percent": -100.0
+    }
+  ],
+  "timing": {
+    "sample": "109441",
+    "count": 30,
+    "cold_request_ms": 73.80516594275832,
+    "median_ms": 52.17814538627863,
+    "p95_ms": 54.549177270382636,
+    "throughput_requests_s": 18.721864059539886,
+    "wall_seconds": 1.6024045418016613,
+    "cpu_seconds": 3.0258199999999995,
+    "cpu_core_equivalents": 1.888299690287899,
+    "process_rss_bytes": 360841216,
+    "samples_ms": [
+      55.51358312368393,
+      52.583415992558,
+      52.326291333884,
+      52.96866688877344,
+      52.658624947071075,
+      53.370459005236626,
+      85.68404195830226,
+      52.349125035107136,
+      52.520833909511566,
+      52.091500256210566,
+      52.51033324748278,
+      51.642832811921835,
+      52.725458052009344,
+      52.027707919478416,
+      52.535791881382465,
+      52.113540936261415,
+      52.25241696462035,
+      51.677582785487175,
+      51.63449980318546,
+      51.92041723057628,
+      51.944333128631115,
+      52.24274983629584,
+      52.32858285307884,
+      51.929499953985214,
+      51.79104208946228,
+      51.65695818141103,
+      51.865833811461926,
+      51.78641714155674,
+      51.875083707273006,
+      51.86454113572836
+    ],
+    "scope": "Flask test-client full request including disk image decode, inference, annotation JPEG, controller, SQLite commit and JSON serialization. No network/browser time; same image repeated; cumulative process RSS with other loaded models."
+  },
+  "panels": [
+    [
+      "Input and detections",
+      "Uploaded image/recorded frame with boxes, or a clearly labeled synthetic scene."
+    ],
+    [
+      "Observation",
+      "Controller state, distinct from detector confidence."
+    ],
+    [
+      "Count and actuator",
+      "Candidate count/free slots/acknowledged disposals; virtual output only."
+    ],
+    [
+      "Last inference",
+      "Measured model/preprocessing time on this host; not Pi latency."
+    ],
+    [
+      "Latest decision and sensors",
+      "Reason, validity and current virtual sensor values."
+    ],
+    [
+      "Observation history",
+      "Count versus explicit simulation time; duplicate timestamps may overlap."
+    ],
+    [
+      "Experiment controls",
+      "Fault scenarios, manual requests, threshold and applicable interval controls."
+    ],
+    [
+      "Event ledger",
+      "Latest 30 rendered events from a 500-event export window; database retains all events."
+    ],
+    [
+      "Recorded benchmarks",
+      "Frozen historical results and JSON export; not recomputed by dashboard controls."
+    ]
+  ],
+  "demo": "Click conflict to reserve a disagreement. Click obstruction to replay opening, closing and obstruction, ending in HOLD. Restore devices, request close and advance time to demonstrate the clear-evidence delay. Select a real COCO sample and run inference; its regions are examples, not calibrated spaces.",
+  "bom": "Raspberry Pi 4 or 5, USB camera, four HC-SR04 distance sensors or verified 3.3 V proximity modules, independent break-beam obstruction sensor, small bench servo, two limit switches, separate regulated servo supply and common signal ground.",
+  "wiring": "Example BCM allocation: trigger/echo pairs (5,6), (13,19), (20,21), (23,24); obstruction input GPIO17; servo signal GPIO18; open/closed limit inputs GPIO22/27. Use an appropriate divider or level shifter on every 5 V echo line. GPIO numbering is BCM, not physical header numbering.",
+  "resume": [
+    "Implemented a Raspberry Pi\u2013targeted parking simulator with camera/proximity fusion, explicit gate states and an obstruction interlock that also applies to manual requests.",
+    "Improved vehicle F1 from 0.386 to 0.581 on 78 held-out COCO images by increasing inference resolution, with class-level results and host timing evidence.",
+    "Eliminated 15 false-free slot-seconds and 14 unsafe closure requests in separate synthetic comparisons, reporting 83.33% availability-decision coverage."
+  ]
+}

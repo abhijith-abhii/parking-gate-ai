@@ -1,0 +1,12 @@
+stateDiagram-v2
+ [*] --> CLOSED
+ CLOSED --> OPENING: request and confirmed free space
+ OPENING --> OPEN: virtual two seconds
+ OPEN --> CLOSING: clear two seconds and close request or dwell
+ OPEN --> HOLD: obstruction or invalid evidence
+ CLOSING --> HOLD: obstruction or invalid evidence
+ HOLD --> CLOSING: clear two seconds
+ CLOSING --> CLOSED: virtual two seconds
+ OPENING --> FAULT: actuator failure
+ CLOSING --> FAULT: actuator failure
+ FAULT --> OPEN: reset and stable clear evidence
