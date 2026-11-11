@@ -1,0 +1,7 @@
+{
+  "source": "Built-in image generation tool; one independently prompted synthetic image per project",
+  "prompt": "Use case: photorealistic-natural. Asset type: synthetic computer vision test input for a parking gate prototype. Generate one realistic landscape view from a fixed elevated entrance camera of a small outdoor parking area. Show exactly two parked cars, one motorcycle partly occluded behind the nearer car, and one adult pedestrian walking near a raised barrier. Painted bays, wet pavement with reflections, long afternoon shadows. All people fictional, no legible license plates, no logos, no bounding boxes or text overlay. Include ordinary imperfect camera framing. The image will be labeled AI-generated synthetic input outside the image.",
+  "sha256": "e660b13f1f687e275165dcd75ea5810e8f71d96a1f4f8cd62b24214ee080ac58",
+  "reviewed_reference": "Human-reviewed synthetic scene: two cars, a heavily occluded motorcycle and one pedestrian; wet reflections and shadows. Counts are qualitative, with no bounding-box ground truth.",
+  "scope": "Exploratory generated input, n=1 per project, no statistical accuracy claim, no training or threshold tuning, excluded from headline held-out benchmarks."
+}
